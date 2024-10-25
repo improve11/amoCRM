@@ -2,11 +2,11 @@
 // submit.php
 
 // Настройки AmoCRM
-define('AMOCRM_DOMAIN', 'vlasav227'); // Замените на ваш домен AmoCRM
+define('AMOCRM_DOMAIN', 'vlasav227'); 
 define('AMOCRM_CLIENT_ID', '11688066');
 define('AMOCRM_CLIENT_SECRET', '32025602');
-define('AMOCRM_REDIRECT_URI', 'your_redirect_uri'); // Например, https://your_domain.com/submit.php
-define('AMOCRM_ACCESS_TOKEN', 'your_access_token'); // Получите через OAuth
+define('AMOCRM_REDIRECT_URI', 'http://81.177.166.244:8081/tz/'); 
+define('AMOCRM_ACCESS_TOKEN', 'your_access_token'); // Получить через OAuth
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Получение данных из формы
@@ -21,13 +21,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'name' => $name,
         'custom_fields' => [
             [
-                'id' =>  399577, // Замените на ID поля Email в AmoCRM
+                'id' =>  399577, // ID поля Email в AmoCRM
                 'values' => [
                     ['value' => $email]
                 ]
             ],
             [
-                'id' => 399575, // Замените на ID поля Телефон в AmoCRM
+                'id' => 399575, // ID поля Телефон в AmoCRM
                 'values' => [
                     ['value' => $phone]
                 ]
@@ -43,10 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $deal = [
             'name' => "Заявка от $name",
             'price' => $price,
-            'status_id' => 'status_id_71111578', // Замените на нужный статус
+            'status_id' => 'status_id_71111578',
             'custom_fields' => [
                 [
-                    'id' => 399717, // ID вашего дополнительного поля
+                    'id' => 399717, // ID дополнительного поля
                     'values' => [
                         ['value' => $time_spent]
                     ]
