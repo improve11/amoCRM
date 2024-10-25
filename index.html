@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Форма заявки</title>
+    <script>
+        let startTime = Date.now();
+
+        window.onload = function() {
+            setTimeout(function() {
+                // Пользователь провел на сайте более 30 секунд
+                document.getElementById('time_spent').value = 1;
+            }, 30000); // 30 секунд
+        };
+    </script>
+</head>
+<body>
+    <form action="submit.php" method="POST">
+        <h1>Оставьте заявку</h1>
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="price">Цена:</label>
+        <input type="number" id="price" name="price" required>
+        
+        <input type="hidden" id="time_spent" name="time_spent" value="0">
+        
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>
